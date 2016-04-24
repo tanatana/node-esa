@@ -1,0 +1,16 @@
+{
+  "name": "node-esa",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "bluebird": "registry:dt/bluebird#2.0.0+20160319051630",
+    "form-data": "registry:dt/form-data#0.0.0+20160316155526",
+    "node": "registry:dt/node#4.0.0+20160412142033",
+    "request": "registry:dt/request#0.0.0+20160316155526",
+    "request-promise": "registry:dt/request-promise#0.4.2+20160316155526"
+  },
+  "ambientDevDependencies": {
+    "node": "registry:dt/node#4.0.0+20160423143914",
+    "request-promise": "registry:dt/request-promise#0.4.2+20160316155526"
+  }
+}

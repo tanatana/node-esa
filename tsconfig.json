@@ -1,0 +1,19 @@
+{
+	"files": [
+		"src/index.ts",
+		"typings/main.d.ts"
+	],
+    "exclude": [
+        "node_modules",
+        "typings/browser"
+    ],
+	"compilerOptions": {
+        "noImplicitAny": true,
+        "declaration": true,
+        "declarationFiles": true,
+        "noExternalResolve": true,
+		"target": "ES5",
+        "moduleResolution": "node",
+		"module": "commonjs"
+	}
+}

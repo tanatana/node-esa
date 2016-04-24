@@ -1,3 +1,5 @@
+import rp = require("request-promise");
+
 export default class Client {
     private _accessToken: string;
     private _teamName: string;
@@ -8,6 +10,7 @@ export default class Client {
     private apiVersion = "v1";
 
     constructor(teamName: string, accessToken: string){
+        this._teamName = teamName;
         this._accessToken = accessToken;
     }
 
@@ -20,7 +23,20 @@ export default class Client {
     private baseURL(): string {
         return `${this.scheme}://${this.host}/${this.apiVersion}/teams/${this._teamName}`;
     }
-    get(path: string): void {
+
+    getJSON(path: string): Promise<any> {
         console.log(this.baseURL() + path);
+        var options = {
+            url: this.baseURL() + path,
+            headers: {
+                "Authorization": `Bearer ${this.accessToken}`
+            },
+            gzip: true,
+            json: true
+        };
+        return rp.get(options)
+            .catch(err => {
+                throw(err);
+            });
     }
 }
